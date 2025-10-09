@@ -1,21 +1,57 @@
-import Link from "next/link";
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  width: 100%;
+}
 
-export default function Header() {
-  return (
-    <header className="site-header">
-      <div className="header-inner">
-        <Link href="/" className="brand">
-          {/* Put your logo at /public/logo.svg or /public/logo.png */}
-          <img src="/logo.svg" alt="Brennen Adams Photography" className="brand-logo" />
-          <span className="brand-text">Brennen Adams Photography</span>
-        </Link>
+.header-inner {
+  height: 72px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes logo left, nav right */
+  width: 100%;
+}
 
-        <nav className="main-nav">
-          <Link href="/about">About</Link>
-          <Link href="/portfolio">Portfolio</Link>
-          <Link href="/contact">Contact</Link>
-        </nav>
-      </div>
-    </header>
-  );
+/* Brand block */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-text {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Top-right nav */
+.main-nav {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  margin-left: auto; /* ensures nav hugs the right edge */
+}
+
+.main-nav a {
+  color: var(--muted);
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
