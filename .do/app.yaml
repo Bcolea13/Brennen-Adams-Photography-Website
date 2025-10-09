@@ -1,22 +1,45 @@
 name: brennenadamsphotography
+region: nyc
+features:
+  - buildpack-stack=ubuntu-22
+
+alerts:
+  - rule: DEPLOYMENT_FAILED
+  - rule: DOMAIN_FAILED
+  - rule: JOB_INVOCATION_FAILED
+  - rule: AUTOSCALE_SUCCEEDED
+  - rule: AUTOSCALE_FAILED
+  - rule: DEPLOYMENT_STARTED
+  - rule: DEPLOYMENT_CANCELED
+  - rule: DEPLOYMENT_LIVE
+  - rule: DOMAIN_LIVE
+
+domains:
+  - domain: brennenadamsphotography.com
+    type: PRIMARY
+    zone: brennenadamsphotography.com
+  - domain: www.brennenadamsphotography.com
+    type: ALIAS
+    zone: brennenadamsphotography.com
+
 services:
-  - name: web
+  - name: brennen-adams-photography-websit
+    source_dir: /
+    environment_slug: node-js
     github:
+      repo: Bcolea13/Brennen-Adams-Photography-Website
       branch: main
       deploy_on_push: true
-    environment_slug: node-js
     instance_count: 1
-    instance_size_slug: basic-xxs
-    source_dir: /
+    instance_size_slug: apps-s-1vcpu-1gb-fixed
+    http_port: 8080
     build_command: npm ci && npm run build
     run_command: npm start
-    build_cache:
-      paths:
-        - node_modules/
-        - .next/cache/
-        - .yarn/cache/
-    envs:
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: 8080
+
+ingress:
+  rules:
+    - match:
+        path:
+          prefix: /
+      component:
+        name: brennen-adams-photography-websit
