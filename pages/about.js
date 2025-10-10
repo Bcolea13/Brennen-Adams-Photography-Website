@@ -7,8 +7,7 @@ export default function About() {
       <main className="container">
         <h1>About Me</h1>
         <p>
-          I’m Brennen Adams — a photographer and computer engineering major at the University of Kentucky.
-          I combine art and technology through computational photography and digital imaging.
+          Hello.
         </p>
       </main>
     </>
