@@ -15,7 +15,7 @@ export default function Home() {
         Brennen Adams Photography
       </h1>
       <p style={{ fontSize: '1.2rem', color: '#ccc', marginBottom: '2rem' }}>
-        Capturing stories through the lens.
+        ???
       </p>
 
       <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '2rem' }}>
