@@ -19,7 +19,7 @@ export default function Home() {
       </p>
 
       <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '2rem' }}>
-        <Link href="/galleries">
+        <Link href="/portfolio">
           <button style={{ padding: '0.8rem 1.5rem', backgroundColor: '#fff', color: '#000', border: 'none', borderRadius: '6px', cursor: 'pointer' }}>
             View Portfolio
           </button>
