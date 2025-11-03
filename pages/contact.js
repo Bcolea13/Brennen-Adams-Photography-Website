@@ -10,6 +10,5 @@ export default function Contact() {
           </a>
         </p>
       </main>
-    </>
   );
 }
