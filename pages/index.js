@@ -15,7 +15,7 @@ export default function Home() {
         Brennen Adams Photography
       </h1>
       <p style={{ fontSize: '1.2rem', color: '#ccc', marginBottom: '2rem' }}>
-        ???
+        Description
       </p>
 
       <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '2rem' }}>
@@ -24,7 +24,7 @@ export default function Home() {
             View Portfolio
           </button>
         </Link>
-        <Link href="/book">
+        <Link href="/contact">
           <button style={{ padding: '0.8rem 1.5rem', backgroundColor: 'transparent', border: '1px solid #fff', borderRadius: '6px', color: '#fff', cursor: 'pointer' }}>
             Book a Session
           </button>
